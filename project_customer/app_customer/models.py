@@ -1,4 +1,3 @@
-from operator import truediv
 from django.db import models
 
 # Create your models here.
@@ -11,7 +10,7 @@ class UserApp(models.Model):
     password = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'db_user'
+        db_table = 'pt_user'
 
 
 class Customer(models.Model):
@@ -23,4 +22,4 @@ class Customer(models.Model):
     image = models.CharField(max_length=200)
 
     class Meta:
-        db_table = 'db_customer'
+        db_table = 'pt_customer'
