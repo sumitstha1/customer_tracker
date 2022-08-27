@@ -1,5 +1,5 @@
 from venv import create
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from app_customer.forms import CustomerCreateForm
 from .models import Customer
@@ -35,5 +35,25 @@ def customer_create(request):
     template = 'customers/create.html'
     return render(request, template, context)
 
+def customer_create(request):
+    if request.method == 'POST':
+        customer = Customer.objects.get(id=request.POST.get('id'))
+
+        customer.first_name = request.POST.get('first_name')
+        customer.middle_name = request.POST.get('middle_name')
+        customer.last_name = request.POST.get('last_name')
+        customer.email = request.POST.get('email')
+        customer.password = request.POST.get('password')
+
+        customer.save()
+
+        return redirect('customer.index')
+    return redirect('customer.index')
+
+def customer_edit(request, id):
+    customer = Customer.objects.get(id=id)
+    template = 'customer/edit.html'
+    context = {'customer': customer}
+    return render(request, template, context)
     
 

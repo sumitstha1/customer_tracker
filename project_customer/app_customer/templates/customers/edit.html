@@ -6,4 +6,33 @@ CUSTOMER Edit
 
 {% block body_content %}
 <h1>Customer Edit</h1>
+<div class='container'>
+    <form method='POST' action="{% url 'customer.update' %}"
+        {% csrf_token %}
+        <div class="form-group mb-2">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+        </div>
+        <br>
+        <div class="form-group mb-2">
+            <label for="middle_name">First Name:</label>
+            <input type="text" class="form-control" value="{{ user.middle_name }}" name="middle_name">
+        </div>
+        <br>
+        <div class="form-group mb-2">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+        </div>
+        <br>
+        <div class="form-group mb-2">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+        </div>
+        <br>
+        <div class="form-group mb-2">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+        </div>
+        <br>
+
 {% endblock %}
