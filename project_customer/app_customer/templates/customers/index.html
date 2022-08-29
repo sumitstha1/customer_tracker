@@ -27,9 +27,9 @@ CUSTOMER List
             <td>{{ customer.last_name }}</td>
             <td>{{ customer.email }}</td>
             <td>
-                <a href="{% url 'customer.edit' user.id%}">Edit</a>
-                <a href='#'>Show</a>
-                <a href='#'>Delete</a>
+                <a href="{% url 'customer.edit' customer.id %}">Edit</a>
+                <a href="{% url 'customer.show' customer.id %}">Show</a>
+                <a href="{% url 'customer.delete' customer.id %}">Delete</a>
             </td>
         </tr>
         {% endfor %}

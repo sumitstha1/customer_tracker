@@ -7,32 +7,34 @@ CUSTOMER Edit
 {% block body_content %}
 <h1>Customer Edit</h1>
 <div class='container'>
-    <form method='POST' action="{% url 'customer.update' %}"
+    <form method='POST' action="{% url 'customer.update' %}">
         {% csrf_token %}
+        <input type="hidden" value=" {{ customer.id }}" name="id">
         <div class="form-group mb-2">
             <label for="first_name">First Name:</label>
-            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+            <input type="text" class="form-control" value="{{ customer.first_name }}" name="first_name">
         </div>
         <br>
         <div class="form-group mb-2">
-            <label for="middle_name">First Name:</label>
-            <input type="text" class="form-control" value="{{ user.middle_name }}" name="middle_name">
+            <label for="middle_name">Middle Name:</label>
+            <input type="text" class="form-control" value="{{ customer.middle_name }}" name="middle_name">
         </div>
         <br>
         <div class="form-group mb-2">
-            <label for="first_name">First Name:</label>
-            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" value="{{ customer.last_name }}" name="last_name">
         </div>
         <br>
         <div class="form-group mb-2">
-            <label for="first_name">First Name:</label>
-            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" value="{{ customer.email }}" name="email">
         </div>
         <br>
         <div class="form-group mb-2">
-            <label for="first_name">First Name:</label>
-            <input type="text" class="form-control" value="{{ user.first_name }}" name="first_name">
+            <label for="password">Password:</label>
+            <input type="text" class="form-control" value="{{ customer.password }}" name="password">
         </div>
+        <button type="submit" class="btn btn-primary">Update</button>
         <br>
-
+    </form>
 {% endblock %}
